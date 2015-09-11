@@ -12,4 +12,22 @@ $(document).ready(function(){
 
     return false;
   });
+
+
+
+  $('a.order-product').click(function(){
+    
+
+    
+    $.ajax('addToCart.php', {
+      success: function(data){
+        $('span#number-of-cart-items').html(data);
+      }
+    });
+
+    return false;
+  });
+
+
+
 });

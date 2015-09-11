@@ -1,4 +1,8 @@
+<?php 
+session_start();
+$_SESSION['number_of_cart_items'] |= 0
 
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,7 +30,11 @@
     <script src="js/main.js"></script>
 
     <!-- Custom styles for this template -->
-
+    <style type="text/css">
+      .navbar-header span {
+        color: #FFF;
+      }
+    </style>
   </head>
 
   <body>
@@ -40,7 +48,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <span>Aantal producten in de mand <span id='number-of-cart-items'><?php echo $_SESSION['number_of_cart_items']; ?></span></span>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right">
@@ -61,7 +69,7 @@
       <div class="container">
         <h1>Hello, world!</h1>
         <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg order-product" href="#" role="button">Learn more &raquo;</a></p>
       </div>
     </div>
 
