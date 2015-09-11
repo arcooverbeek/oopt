@@ -1,15 +1,14 @@
 $(document).ready(function(){
   $('a.check-stock').click(function(){
-    $(this).replaceWith( "<h2>New heading</h2>" );
+    var stockButton = $(this);
+
     
-    $.ajax('stock.php', {
+    $.ajax(stockButton.attr('href'), {
+      
       success: function(data){
-        console.log('success!!!');
-        console.log(data);
+        stockButton.replaceWith(data);
       }
     });
-
-
 
     return false;
   });
